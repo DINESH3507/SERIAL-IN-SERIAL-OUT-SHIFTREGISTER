@@ -16,7 +16,7 @@ A Serial-In Serial-Out shift register is a sequential logic circuit that allows 
 
 The logic circuit provided below demonstrates a serial-in serial-out (SISO) shift register. It comprises four D flip-flops that are interconnected in a sequential manner. These flip-flops operate synchronously with one another, as they all receive the same clock signal.
 
-![image](https://github.com/naavaneetha/SERIAL-IN-SERIAL-OUT-SHIFTREGISTER/assets/154305477/e81c4072-37f9-46c6-8145-566764b74c3a)
+![Screenshot 2024-12-18 133028](https://github.com/user-attachments/assets/8285fa71-fe10-4c21-8a1d-2cbbe644903d)
 
 Figure 01 4 Bit SISO Register
 
@@ -25,18 +25,56 @@ Each D flip-flop in the circuit has a Data (D) input, a Clock (CLK) input, and a
 
 **Procedure**
 
-/* write all the steps invloved */
+1.Type the program in Quartus software.
+
+2.Compile and run the program.
+
+3.Generate the RTL schematic and save the logic diagram.
+
+4.Create nodes for inputs and outputs to generate the timing diagram.
+
+5.For different input combinations generate the timing diagram.
 
 **PROGRAM**
 
 /* Program for flipflops and verify its truth table in quartus using Verilog programming.
 
-Developed by: RegisterNumber:
+Developed by: Dinesh.V
 
-*/
+RegisterNumber: 24010667
+
+module siso_10(clk, sin, q);
+
+input clk;
+
+input sin;
+
+output [3:0] q;
+
+reg [3:0] q;
+
+always @(posedge clk)
+
+begin
+
+q[0] <= sin;
+
+q[1] <= q[0];
+
+q[2] <= q[1];
+
+q[3] <= q[2];
+
+end
+
+endmodule
 
 **RTL LOGIC FOR SISO Shift Register**
+
+![Screenshot 2024-12-18 133223](https://github.com/user-attachments/assets/5b0afdc9-49bb-4797-8d09-34c729b815e7)
 
 **TIMING DIGRAMS FOR SISO Shift Register**
 
 **RESULTS**
+
+The 4-bit SISO (Serial-In Serial-Out) shift register was successfully implemented using Verilog in Quartus Prime. The functionality was validated using the truth table. The shift register correctly shifted the input data one bit at a time through the flip-flops on each clock pulse. The outputs q0, q1, q2, and q3 were observed to propagate the input data as expected, confirming the correct operation of the shift register.
